@@ -5,7 +5,7 @@ import './index.less';
 import video from '../../assets/video.mp4'
 
 const gif = new GIF({
-    workers: 2,
+    workers: 20,
     quality: 1,
     workerScript: worker,
 });
