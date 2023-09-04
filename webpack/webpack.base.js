@@ -1,5 +1,4 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     entry: {
@@ -8,6 +7,15 @@ module.exports = {
     output: {
         filename: "js/bundle.js",
         path: path.resolve(__dirname, "../dist"),
+    },
+    resolve: {
+        extensions: [".js"],
+        alias: {
+            "@components": path.resolve(__dirname, "../src/components"),
+            "@utils": path.resolve(__dirname, "../src/utils"),
+            "@assets": path.resolve(__dirname, "../src/assets"),
+            "@actions": path.resolve(__dirname, "../src/store/actions/index.js"),
+        }
     },
     module: {
         rules: [
