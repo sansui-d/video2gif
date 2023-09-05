@@ -1,5 +1,12 @@
-import { SETGIFURL, SETLOADING } from '../types/index';
+import { SETPARAMETERS,SETGIFURL, SETGIFSTATE ,SETVIDEOURL,SETVIDEONAME} from '../types/index';
 
+
+export function initGif(parameters) {
+  return {
+    type: SETPARAMETERS,
+    parameters
+  }
+}
 export function setGifUrl(gifUrl) {
     return {
       type: SETGIFURL,
@@ -7,10 +14,24 @@ export function setGifUrl(gifUrl) {
     }
   }
 
-  export function setLoading(loading) {
+  export function setGifState(gifState) {
     return {
-      type: SETLOADING,
-      loading
+      type: SETGIFSTATE,
+      gifState
+    }
+  }
+
+  export function setVideoUrl(videoUrl) {
+    return {
+      type: SETVIDEOURL,
+      videoUrl
+    }
+  }
+
+  export function setVideoName(videoName) {
+    return {
+      type: SETVIDEONAME,
+      videoName
     }
   }
 
