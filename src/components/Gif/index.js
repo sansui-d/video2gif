@@ -1,9 +1,9 @@
-import React, {useMemo} from 'react';
-import {useSelector} from "react-redux"
+import React, { useMemo } from 'react';
+import { useSelector } from "react-redux"
 import './index.less';
 
 function Gif() {
-    const {gifUrl,gifState} = useSelector((state)=>{
+    const { gifUrl, gifState } = useSelector((state) => {
         return state
     })
     return (

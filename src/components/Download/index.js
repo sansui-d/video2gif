@@ -1,9 +1,9 @@
 import React from 'react';
-import {useSelector} from "react-redux"
+import { useSelector } from "react-redux"
 import './index.less';
 
 function Download() {
-    const {videoName,gifUrl} = useSelector((state)=>{
+    const { videoName, gifUrl } = useSelector((state) => {
         return state
     })
     const handleDownload = () => {
