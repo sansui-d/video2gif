@@ -14,7 +14,7 @@ function Download() {
         a.click();
     }
     return (
-        <div className='video2gif-download' onClick={handleDownload}>下载</div>
+        <div className='video2gif-download' onClick={handleDownload}>Download</div>
     );
 }
 

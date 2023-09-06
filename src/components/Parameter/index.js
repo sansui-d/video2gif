@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux"
+import { debounce } from '@utils/helper';
 import { setParameters } from '@actions'
 import './index.less';
 
@@ -30,19 +31,19 @@ function Parameter() {
         <div className='video2gif-parameter'>
             <div>
                 <label className='video2gif-parameter-label'>gif with width</label>
-                <input type='number' defaultValue={parameters.width} onChange={(e) => handleChange(e, 0)} />
+                <input type='number' defaultValue={parameters.width} onChange={debounce((e)=>handleChange(e, 0),500)} />
             </div>
             <div>
                 <label className='video2gif-parameter-label'>gif with height</label>
-                <input type='number' defaultValue={parameters.height} onChange={(e) => handleChange(e, 1)} />
+                <input type='number' defaultValue={parameters.height} onChange={debounce((e)=>handleChange(e, 1),500)} />
             </div>
             <div>
                 <label className='video2gif-parameter-label'>gif with quality</label>
-                <input type='number' defaultValue={parameters.quality} onChange={(e) => handleChange(e, 2)} />
+                <input type='number' defaultValue={parameters.quality} onChange={debounce((e)=>handleChange(e, 2),500)} />
             </div>
             <div>
                 <label className='video2gif-parameter-label'>gif with delay</label>
-                <input type='number' defaultValue={parameters.delay} onChange={(e) => handleChange(e, 3)} />
+                <input type='number' defaultValue={parameters.delay} onChange={debounce((e)=>handleChange(e, 3),500)} />
             </div>
         </div>
     );

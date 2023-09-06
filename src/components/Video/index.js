@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux"
 import GIF from 'gif.js'
-import { setGifState, setGifUrl, setVideoUrl, setVideoName } from '@actions'
+import { setGifState, setGifUrl, setVideoUrl, setVideoName,setProgress } from '@actions'
 import { worker } from '@utils/gif-worker'
 import Parameter from '@components/Parameter';
 import video from '@assets/video.mp4'
@@ -15,6 +15,7 @@ function Video() {
     const [gif, setGif] = useState(null)
     const videoRef = useRef(null)
     const timer = useRef(null);
+    const timeout = useRef(null);
 
     const render = () => {
         const cvs = document.getElementById("cvs");
@@ -27,28 +28,36 @@ function Video() {
         img.src = cvs.toDataURL("image/png");
         img.onload = () => {
             gif?.addFrame(img, {
-                delay: 100,
+                delay: parameters?.delay || 100,
             });
         };
     }
 
     const handleStart = () => {
+        gif.abort()
+        gif.frames = []
         dispatch(setGifState(1))
-        timer.current = setInterval(render, 100);
+        timer.current = setInterval(render, parameters?.delay || 100);
         videoRef.current.play();
     }
 
     const handleEnd = () => {
         try {
-            gif.render();
             clearInterval(timer.current);
             timer.current = null
             videoRef.current.pause()
             dispatch(setGifState(2))
+            gif.on("progress", function (progress) {
+                dispatch(setProgress(progress))
+                console.log(progress, '3')
+            });
             gif.on("finished", function (blob) {
                 dispatch(setGifUrl(URL.createObjectURL(blob)))
-                dispatch(setGifState(3))
+                timeout.current =  setTimeout(() => {
+                    dispatch(setGifState(3)) 
+                }, 500);
             });
+            gif.render();
         } catch (err) {
             clearInterval(timer.current);
             timer.current = null
@@ -69,13 +78,23 @@ function Video() {
         }
     }
 
-    useEffect(() => {
+    const initGif = () => {
         setGif(new GIF({
             workers: 2,
             quality: parameters.quality,
             workerScript: worker
         }))
-        console.log(parameters.quality)
+        dispatch(setGifState(0))
+    }
+
+    useEffect(() => {
+        initGif()
+        return () => {
+            timeout.current = null
+            timer.current = null
+            clearTimeout(timeout.current)
+            clearInterval(timer.current)
+        }
     }, [parameters])
 
     return (

@@ -1,4 +1,4 @@
-import { SETPARAMETERS, SETGIFURL, SETGIFSTATE, SETVIDEOURL, SETVIDEONAME } from '../types/index';
+import { SETPARAMETERS,SETPROGRESS, SETGIFURL, SETGIFSTATE, SETVIDEOURL, SETVIDEONAME } from '../types/index';
 
 export function setParameters(parameters) {
   return {
@@ -28,5 +28,12 @@ export function setVideoName(videoName) {
   return {
     type: SETVIDEONAME,
     videoName
+  }
+}
+
+export function setProgress(progress) {
+  return {
+    type: SETPROGRESS,
+    progress
   }
 }
