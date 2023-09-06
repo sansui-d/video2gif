@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux"
 import GIF from 'gif.js'
-import { setGifState, setGifUrl, setVideoUrl, setVideoName,setProgress } from '@actions'
+import { setGifState, setGifUrl, setVideoUrl, setVideoName, setProgress } from '@actions'
 import { worker } from '@utils/gif-worker'
 import Parameter from '@components/Parameter';
+import Button from '@components/Button';
 import video from '@assets/video.mp4'
 import './index.less';
 
@@ -53,8 +54,8 @@ function Video() {
             });
             gif.on("finished", function (blob) {
                 dispatch(setGifUrl(URL.createObjectURL(blob)))
-                timeout.current =  setTimeout(() => {
-                    dispatch(setGifState(3)) 
+                timeout.current = setTimeout(() => {
+                    dispatch(setGifState(3))
                 }, 500);
             });
             gif.render();
@@ -104,17 +105,17 @@ function Video() {
             </div>
             <Parameter />
             <div className='video2gif-video-btn'>
-                <label htmlFor={'input'}>Upload Your Video</label>
+                <label className='video2gif-label' htmlFor='input'>Upload Your Video</label>
                 <input
                     type="file"
-                    id={'input'}
+                    id='input'
                     hidden={true}
                     accept=".mp4,.avi,.wmv,.mov,.flv,.mkv"
                     onClick={(e) => e.target.value = null}
                     onChange={(e) => handleUpload(e)}
                 />
-                <div onClick={handleStart}>Begin</div>
-                <div onClick={handleEnd}>End</div>
+                <Button onClick={handleStart} text='Begin' />
+                <Button onClick={handleEnd} text='End' />
             </div>
         </div>
     )

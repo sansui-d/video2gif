@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from "react-redux"
+import Button from '@components/Button';
 import './index.less';
 
 function Download() {
@@ -14,7 +15,7 @@ function Download() {
         a.click();
     }
     return (
-        <div className='video2gif-download' onClick={handleDownload}>Download</div>
+        <Button onClick={handleDownload} text='Download' />
     );
 }
 

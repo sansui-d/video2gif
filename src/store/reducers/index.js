@@ -1,4 +1,4 @@
-import { SETPARAMETERS,SETPROGRESS, SETGIFURL, SETGIFSTATE, SETVIDEOURL, SETVIDEONAME } from '../types/index'
+import { SETPARAMETERS, SETPROGRESS, SETGIFURL, SETGIFSTATE, SETVIDEOURL, SETVIDEONAME } from '../types/index'
 
 const rootState = {
   parameters: { width: 640, height: 340, quality: 10, delay: 100 },
