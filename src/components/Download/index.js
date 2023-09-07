@@ -1,4 +1,4 @@
-import React, {useState, useEffect,useRef} from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from "react-redux"
 import GIF from 'gif.js'
 import { worker } from '@utils/gif-worker'
@@ -9,7 +9,7 @@ import './index.less';
 
 function Download() {
     const dispatch = useDispatch()
-    const { videoName, gifUrl,parameters} = useSelector((state) => {
+    const { videoName, gifUrl, parameters } = useSelector((state) => {
         return state
     })
     const [gif, setGif] = useState(null)
@@ -107,10 +107,10 @@ function Download() {
     return (
         <div className="video2gif-download">
             <div className='video2gif-download-item'>
-                            <Button onClick={handleStart} text='Begin' />
+                <Button onClick={handleStart} text='Begin' />
                 <Button onClick={handleEnd} text='End' />
-                </div>
-                <div className='video2gif-download-item'>
+            </div>
+            <div className='video2gif-download-item'>
                 <label className='video2gif-label' htmlFor='input'>Upload Your Video</label>
                 <input
                     type="file"
@@ -120,7 +120,7 @@ function Download() {
                     onClick={(e) => e.target.value = null}
                     onChange={(e) => handleUpload(e)}
                 />
-            <Button onClick={handleDownload} text='Download' />
+                <Button onClick={handleDownload} text='Download' />
             </div>
         </div>
     );

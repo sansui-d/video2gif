@@ -16,6 +16,12 @@ function Gif() {
     }
     useEffect(() => {
         set(progress)
+        if (progress == 1) {
+            setTimeout(() => {
+                setStrokeDasharray('0 314')
+                setPercent('0')
+            }, 1000)
+        }
     }, [progress])
 
     return (
@@ -30,8 +36,8 @@ function Gif() {
                         <tspan>{percent}%</tspan>
                     </text>
                 </svg>
-                <div style={{marginBottom: '50px'}}>GIF in making...</div>
-                </div>}
+                <div style={{ marginBottom: '50px' }}>GIF in making...</div>
+            </div>}
             {gifState === 3 && <a>{<img src={gifUrl} />}</a>}
         </div>
     );
