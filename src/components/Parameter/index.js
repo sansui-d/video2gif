@@ -30,19 +30,19 @@ function Parameter() {
     }
     return (
         <div className='video2gif-parameter'>
-            <div>
+            <div className='video2gif-parameter-item'>
                 <label className='video2gif-parameter-label'>gif with width</label>
                 <Input type='number' defaultValue={parameters.width} onChange={debounce((e) => handleChange(e, 0), 500)} />
             </div>
-            <div>
+            <div className='video2gif-parameter-item'>
                 <label className='video2gif-parameter-label'>gif with height</label>
                 <Input type='number' defaultValue={parameters.height} onChange={debounce((e) => handleChange(e, 1), 500)} />
             </div>
-            <div>
+            <div className='video2gif-parameter-item'>
                 <label className='video2gif-parameter-label'>gif with quality</label>
                 <Input type='number' defaultValue={parameters.quality} onChange={debounce((e) => handleChange(e, 2), 500)} />
             </div>
-            <div>
+            <div className='video2gif-parameter-item'>
                 <label className='video2gif-parameter-label'>gif with delay</label>
                 <Input type='number' defaultValue={parameters.delay} onChange={debounce((e) => handleChange(e, 3), 500)} />
             </div>
