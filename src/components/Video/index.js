@@ -10,7 +10,7 @@ function Video() {
 
     return (
         <div className='video2gif-video'>
-            <video id='video2gif-video' controls src={videoUrl || video}></video>
+            <video id='video2gif-video' poster={'../../assets/video.jpg'} controls src={videoUrl || video}></video>
         </div>
     )
 }
