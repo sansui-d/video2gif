@@ -7,3 +7,5 @@ click the 'End' button to start making your gif image,
 and finally download it.
 
 ![1694616508576](https://github.com/sansui-d/video2gif/assets/71920152/dd08cf77-ccb2-4deb-89df-d1757da61f79)
+
+Suggest using Google Chrome to access
