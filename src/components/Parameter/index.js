@@ -16,7 +16,7 @@ function Parameter() {
                 dispatch(setParameters({ ...parameters, width: Number(e.target.value) }))
                 break
             case 1:
-                dispatch(setParameters({ ...parameters, height: Number(e.target.value)}))
+                dispatch(setParameters({ ...parameters, height: Number(e.target.value) }))
                 break
             case 2:
                 dispatch(setParameters({ ...parameters, quality: Number(e.target.value) }))

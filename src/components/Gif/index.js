@@ -27,11 +27,11 @@ function Gif() {
     return (
         <div className='video2gif-gif'>
             {gifState === 0 && <div className='video2gif-git-nothing'>
-            You can click the '<b>Upload Your Video</b>' button to upload your video,<br />
-            set the <b>width(px)</b>, <b>height(px)</b>, <b>quality(1-10)</b>, and <b>delay(ms)</b> of your gif image.<br />
-            Then, click the '<b>Begin</b>' button to start recording your gif image,<br />
-            click the '<b>End</b>' button to start making your gif image,<br />
-            and finally <b>download</b> it.
+                You can click the '<b>Upload Your Video</b>' button to upload your video,<br />
+                set the <b>width(px)</b>, <b>height(px)</b>, <b>quality(1-10)</b>, and <b>delay(ms)</b> of your gif image.<br />
+                Then, click the '<b>Begin</b>' button to start recording your gif image,<br />
+                click the '<b>End</b>' button to start making your gif image,<br />
+                and finally <b>download</b> it.
             </div>}
             {gifState === 1 && <canvas id="video2gif-gif-cvs"></canvas>}
             {gifState === 2 && <div className="video2gif-gif-progress">

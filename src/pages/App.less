@@ -2,6 +2,7 @@
   overflow: hidden;
   background-image: url("../assets/img.png");
   background-size: cover;
+  height: 100vh;
   .video2gif-content {
     height: calc(100vh - 56px);
     display: flex;
@@ -13,5 +14,66 @@
   }
   div {
     color: #fff;
+  }
+}
+
+@media (max-width: 1380px) {
+  .video2gif {
+    overflow: auto;
+    .video2gif-content {
+      .video2gif-content-left {
+        zoom: 0.75;
+      }
+      .video2gif-content-right {
+        zoom: 0.75;
+      }
+    }
+  }
+}
+
+@media (max-width: 1080px) {
+  .video2gif {
+    overflow: auto;
+    .video2gif-content {
+      display: flex;
+      flex-direction: column;
+      padding: 20px 0;
+      height: 100%;
+      overflow: auto;
+      .video2gif-content-left {
+      }
+      .video2gif-content-right {
+        margin-top: 30px;
+      }
+    }
+  }
+}
+
+@media (max-width: 624px) {
+  .video2gif {
+    overflow: auto;
+    .video2gif-content {
+      display: flex;
+      flex-direction: column;
+      height: fit-content;
+      .video2gif-content-left {
+        zoom: 1;
+        .video2gif-video {
+          width: 90vw;
+          height: 200px;
+          margin: 0 auto;
+        }
+        .video2gif-parameter-label {
+          margin-bottom: 10px;
+        }
+      }
+      .video2gif-content-right {
+        zoom: 1;
+        .video2gif-gif {
+          width: 90vw;
+          height: 200px;
+        }
+      }
+    }
   }
 }

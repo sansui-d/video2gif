@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { useDispatch, useSelector } from "react-redux"
+import React from 'react';
+import { useSelector } from "react-redux"
 import video from '@assets/video.mp4'
 import img from '@assets/video.jpg'
 import './index.less';
