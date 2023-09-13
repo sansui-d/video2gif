@@ -1,5 +1,5 @@
 # video2gif  [Go to Project](https://sansui-d.github.io/video2gif/) 
-video to gif with react
+### video to gif with react
 You can click the 'Upload Your Video' button to upload your video,
 set the width(px), height(px), quality(1-10), and delay(ms) of your gif image.
 Then, click the 'Begin' button to start recording your gif image,
