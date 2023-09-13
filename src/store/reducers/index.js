@@ -5,7 +5,7 @@ const rootState = {
   gifUrl: '',
   gifState: 0, // 0:未开始 1:录制中 2:制作中 3:已完成
   videoUrl: '',
-  videoName: null,
+  videoName: 'https://sansui-d.github.io/video2gif/',
   progress: 0,
 }
 export default function reducers(state = rootState, actions) {

@@ -26,17 +26,23 @@ function Gif() {
 
     return (
         <div className='video2gif-gif'>
-            {gifState === 0 && <div className='video2gif-git-nothing'>there is nothing</div>}
+            {gifState === 0 && <div className='video2gif-git-nothing'>
+            You can click the '<b>Upload Your Video</b>' button to upload your video,<br />
+            set the <b>width(px)</b>, <b>height(px)</b>, <b>quality(1-10)</b>, and <b>delay(ms)</b> of your gif image.<br />
+            Then, click the '<b>Begin</b>' button to start recording your gif image,<br />
+            click the '<b>End</b>' button to start making your gif image,<br />
+            and finally <b>download</b> it.
+            </div>}
             {gifState === 1 && <canvas id="video2gif-gif-cvs"></canvas>}
             {gifState === 2 && <div className="video2gif-gif-progress">
                 <svg width="200" height="200" viewBox="0 0 200 200">
-                    <circle cx="100" cy="100" r="50" fill="none" strokeWidth="10" stroke="#FFE5E5" />
-                    <circle className="video2gif-gif-progress-round" strokeDasharray={strokeDasharray} strokeLinecap="round" cx="100" cy="100" r="50" fill="none" strokeWidth="10" stroke="#FFBFBF" transform="rotate(-90, 100, 100)" />
-                    <text x="100" y="100" fill="#040D12" textAnchor="middle" dominantBaseline="central">
+                    <circle cx="100" cy="100" r="50" fill="none" strokeWidth="10" stroke="#fff" />
+                    <circle className="video2gif-gif-progress-round" strokeDasharray={strokeDasharray} strokeLinecap="round" cx="100" cy="100" r="50" fill="none" strokeWidth="10" stroke="#db639b" transform="rotate(-90, 100, 100)" />
+                    <text x="100" y="100" fill="#fff" textAnchor="middle" dominantBaseline="central">
                         <tspan>{percent}%</tspan>
                     </text>
                 </svg>
-                <div style={{ marginBottom: '50px' }}>GIF in making...</div>
+                <div style={{ marginBottom: '50px' }}>Gif is making...</div>
             </div>}
             {gifState === 3 && <a>{<img src={gifUrl} />}</a>}
         </div>

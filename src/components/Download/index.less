@@ -1,4 +1,5 @@
 .video2gif-download {
+  margin-top: 30px;
   .video2gif-download-item {
     margin-top: 10px;
     & > .video2gif-button:first-child{
@@ -15,12 +16,21 @@
       font-size: 14px;
       margin-right: 20px;
       cursor: pointer;
+      user-select: none;
     }
     .video2gif-label:active {
       box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
     }
     .video2gif-button {
       display: inline-block;
+    }
+    .video2gif-button-no-allow {
+      cursor: not-allowed;
+      pointer-events: none;
+      box-shadow: 0 0 10px #db639b;
+      &:active {
+        box-shadow: 0 0 10px #fff;
+      }
     }
   }
 }
