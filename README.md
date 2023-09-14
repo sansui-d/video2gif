@@ -6,6 +6,6 @@ Then, click the 'Begin' button to start recording your gif image,
 click the 'End' button to start making your gif image,
 and finally download it.
 
-![1694616508576](https://github.com/sansui-d/video2gif/assets/71920152/dd08cf77-ccb2-4deb-89df-d1757da61f79)
+![fef7bd9634f63094d621ffca6](https://github.com/sansui-d/video2gif/assets/71920152/c7b64cd9-555b-4ce0-8f43-bc4312f8f58e)
 
 Suggest using Google Chrome to access
