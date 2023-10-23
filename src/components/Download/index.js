@@ -43,7 +43,6 @@ function Download() {
     };
 
     const imgRender = () => {
-        console.log(parameters, "parameters?.delay ");
         const cvs = document.getElementById("video2gif-gif-cvs");
         const video = document.getElementById("video2gif-video");
         const ctx = cvs.getContext("2d");
@@ -75,7 +74,6 @@ function Download() {
     };
 
     const initGif = () => {
-        console.log(parameters, "123");
         gif.current = new GIF({
             workers: 2,
             quality: parameters.quality,
