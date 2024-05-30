@@ -14,6 +14,6 @@ $ npm i
 $ npm start
 ```
 ### Screenshot
-![fef7bd9634f63094d621ffca6](https://github.com/sansui-d/video2gif/assets/71920152/c7b64cd9-555b-4ce0-8f43-bc4312f8f58e)
+![a516fdf452fc51ced6d809ab944b0bd2](https://github.com/sansui-d/video2gif/assets/71920152/d2ced042-44d8-4b08-bbd8-6ae1a15aa7b5)
 ### Suggest
 Suggest using Google Chrome to access
